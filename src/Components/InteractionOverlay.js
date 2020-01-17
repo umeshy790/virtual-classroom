@@ -4,6 +4,7 @@ import { makeStyles } from "@material-ui/styles";
 import Students from "./Students";
 import InteractionOverlayFooter from "./InteractionOverlayFooter";
 import Notes from "./Notes";
+import WhiteBoard from "./WhiteBoard";
 
 const useStyles = makeStyles({
   container: { height: "70vh", overflow: "hidden", background: "#ffffff", position: "relative" },
@@ -15,11 +16,9 @@ const useStyles = makeStyles({
     overflowY: "auto"
   },
   inFocusBlock: {
-    width: "100vw",
     transition: "margin-left 250ms ease-in,transform 250ms ease-in,-webkit-transform 250ms ease-in"
   },
   outOfFocusBlock: {
-    width: "100vw",
     marginLeft: "-100vw",
     transition: "margin-left 250ms ease-out,transform 250ms ease-out,-webkit-transform 250ms ease-out"
   },
@@ -38,12 +37,13 @@ function InteractionOverlay() {
   return (
     <div className={classes.container}>
       <div className={classes.body}>
-        <div className={currentScreen === 0 ? classes.inFocusBlock : classes.outOfFocusBlock}>
+        {currentScreen === 0 ? <WhiteBoard></WhiteBoard> : currentScreen === 1 ? <Notes /> : <Students />}
+        {/* <div className={currentScreen === 0 ? classes.inFocusBlock : classes.outOfFocusBlock}>
           <Notes />
         </div>
         <div className={currentScreen === 0 || currentScreen === 1 ? classes.inFocusBlock : classes.outOfFocusBlock}>
           <Students />
-        </div>
+        </div> */}
       </div>
       <div className={classes.footer}>
         <InteractionOverlayFooter />
