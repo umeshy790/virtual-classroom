@@ -5,7 +5,8 @@ let initialDefualtState = {
     { name: "Aryan", qa: 17, id: "002", accuracy: "75%" },
     { name: "Swati", qa: 19, id: "003", accuracy: "60%" }
   ],
-  screenIndex: 0
+  questions: ["Is javascript statically types language ?", "Why python is slow ?", "Is there any way to learn Englist ?"],
+  screenIndex: 3
 };
 
 const appReducer = (state = initialDefualtState, action) => {

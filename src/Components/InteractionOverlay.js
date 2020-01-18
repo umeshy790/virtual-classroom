@@ -5,6 +5,7 @@ import Students from "./Students";
 import InteractionOverlayFooter from "./InteractionOverlayFooter";
 import Notes from "./Notes";
 import WhiteBoard from "./WhiteBoard";
+import Questions from "./QuestionAnswers";
 
 const useStyles = makeStyles({
   container: { height: "70vh", overflow: "hidden", background: "#ffffff", position: "relative" },
@@ -37,13 +38,7 @@ function InteractionOverlay() {
   return (
     <div className={classes.container}>
       <div className={classes.body}>
-        {currentScreen === 0 ? <WhiteBoard></WhiteBoard> : currentScreen === 1 ? <Notes /> : <Students />}
-        {/* <div className={currentScreen === 0 ? classes.inFocusBlock : classes.outOfFocusBlock}>
-          <Notes />
-        </div>
-        <div className={currentScreen === 0 || currentScreen === 1 ? classes.inFocusBlock : classes.outOfFocusBlock}>
-          <Students />
-        </div> */}
+        {currentScreen === 0 ? <WhiteBoard></WhiteBoard> : currentScreen === 1 ? <Notes /> : currentScreen === 2 ? <Students /> : <Questions />}
       </div>
       <div className={classes.footer}>
         <InteractionOverlayFooter />
