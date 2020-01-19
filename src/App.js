@@ -26,8 +26,8 @@ function App() {
     <ThemeProvider theme={theme}>
       <Provider store={store}>
         <Router basename="virtual-classroom">
-          <Route path="/" component={StartClass} />
-          <Route path="/class" component={Classroom}></Route>
+          <Route exact path="/" component={StartClass} />
+          <Route exact path="/start" component={Classroom}></Route>
         </Router>
       </Provider>
     </ThemeProvider>

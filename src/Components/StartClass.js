@@ -39,7 +39,7 @@ function StartClass(props) {
   /**
    * routing to classroom component
    */
-  const handleClick = () => history.push("/class");
+  const handleClick = () => history.push("/start");
 
   return (
     <div className={classes.root}>
