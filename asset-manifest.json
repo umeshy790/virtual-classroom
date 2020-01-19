@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/virtual-classroom/static/css/main.5ecd60fb.chunk.css",
-    "main.js": "/virtual-classroom/static/js/main.83fc27fc.chunk.js",
-    "main.js.map": "/virtual-classroom/static/js/main.83fc27fc.chunk.js.map",
+    "main.js": "/virtual-classroom/static/js/main.4abfc16e.chunk.js",
+    "main.js.map": "/virtual-classroom/static/js/main.4abfc16e.chunk.js.map",
     "runtime-main.js": "/virtual-classroom/static/js/runtime-main.7e00e867.js",
     "runtime-main.js.map": "/virtual-classroom/static/js/runtime-main.7e00e867.js.map",
-    "static/js/2.3aae07e2.chunk.js": "/virtual-classroom/static/js/2.3aae07e2.chunk.js",
-    "static/js/2.3aae07e2.chunk.js.map": "/virtual-classroom/static/js/2.3aae07e2.chunk.js.map",
+    "static/js/2.b365ed88.chunk.js": "/virtual-classroom/static/js/2.b365ed88.chunk.js",
+    "static/js/2.b365ed88.chunk.js.map": "/virtual-classroom/static/js/2.b365ed88.chunk.js.map",
     "index.html": "/virtual-classroom/index.html",
-    "precache-manifest.f3eedabd7d89102db9c9b0ac79c87666.js": "/virtual-classroom/precache-manifest.f3eedabd7d89102db9c9b0ac79c87666.js",
+    "precache-manifest.f04ecc6af052e03ce0784eac82a61aa4.js": "/virtual-classroom/precache-manifest.f04ecc6af052e03ce0784eac82a61aa4.js",
     "service-worker.js": "/virtual-classroom/service-worker.js",
     "static/css/main.5ecd60fb.chunk.css.map": "/virtual-classroom/static/css/main.5ecd60fb.chunk.css.map",
-    "static/js/2.3aae07e2.chunk.js.LICENSE": "/virtual-classroom/static/js/2.3aae07e2.chunk.js.LICENSE",
+    "static/js/2.b365ed88.chunk.js.LICENSE": "/virtual-classroom/static/js/2.b365ed88.chunk.js.LICENSE",
     "static/media/pdf.png": "/virtual-classroom/static/media/pdf.49d4041b.png"
   },
   "entrypoints": [
     "static/js/runtime-main.7e00e867.js",
-    "static/js/2.3aae07e2.chunk.js",
+    "static/js/2.b365ed88.chunk.js",
     "static/css/main.5ecd60fb.chunk.css",
-    "static/js/main.83fc27fc.chunk.js"
+    "static/js/main.4abfc16e.chunk.js"
   ]
 }

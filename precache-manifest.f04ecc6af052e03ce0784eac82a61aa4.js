@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1dfae9afe8356e4c42de63c51f7a5d22",
+    "revision": "f018ab22a7d6876557766be7f57f9a33",
     "url": "/virtual-classroom/index.html"
   },
   {
-    "revision": "2b54a409c32551da6e98",
+    "revision": "7cb0f055017772ee2a81",
     "url": "/virtual-classroom/static/css/main.5ecd60fb.chunk.css"
   },
   {
-    "revision": "83e8cf22a2ffb7ada3c3",
-    "url": "/virtual-classroom/static/js/2.3aae07e2.chunk.js"
+    "revision": "755d0dffb73219fae746",
+    "url": "/virtual-classroom/static/js/2.b365ed88.chunk.js"
   },
   {
     "revision": "b51e62edbcf7a9c4f4ad13f506021d3e",
-    "url": "/virtual-classroom/static/js/2.3aae07e2.chunk.js.LICENSE"
+    "url": "/virtual-classroom/static/js/2.b365ed88.chunk.js.LICENSE"
   },
   {
-    "revision": "2b54a409c32551da6e98",
-    "url": "/virtual-classroom/static/js/main.83fc27fc.chunk.js"
+    "revision": "7cb0f055017772ee2a81",
+    "url": "/virtual-classroom/static/js/main.4abfc16e.chunk.js"
   },
   {
     "revision": "0ad3d839f7dd171d7acb",
