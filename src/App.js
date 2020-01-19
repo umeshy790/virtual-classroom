@@ -25,9 +25,9 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Provider store={store}>
-        <Router  basename='/virtual-classroom'>
-          <Route exact path="/" component={StartClass} />
-          <Route exact path="/class" component={Classroom}></Route>
+        <Router basename="virtual-classroom">
+          <Route path="/" component={StartClass} />
+          <Route path="/class" component={Classroom}></Route>
         </Router>
       </Provider>
     </ThemeProvider>
