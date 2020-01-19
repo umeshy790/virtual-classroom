@@ -1,10 +1,8 @@
-import React, { useState } from "react";
-import pdf from "../assets/pdf.png";
-import excel from "../assets/excel.png";
-import ppt from "../assets/ppt.png";
+import React, { useState, Fragment } from "react";
+import { useSelector } from "react-redux";
 
 import { makeStyles, createStyles } from "@material-ui/styles";
-import { ButtonBase, Fab } from "@material-ui/core";
+import { ButtonBase, Fab, Button } from "@material-ui/core";
 import ShareIcon from "@material-ui/icons/Share";
 import CheckIcon from "@material-ui/icons/Check";
 import Snackbar from "@material-ui/core/Snackbar";
@@ -13,31 +11,58 @@ const useStyles = makeStyles(theme =>
   createStyles({
     container: {
       width: "100vw",
-      display: "flex",
-      flexWrap: "wrap",
       position: "relative",
       overflow: "hidden",
       height: "100%",
       padding: "0px 10px",
       boxSizing: "border-box"
     },
+    canvas: {
+      position: "absolute",
+      zIndex: "1000",
+      height: "100%",
+      width: "100%",
+      background: "black",
+      left: "0px",
+      right: "0px",
+      color: "white",
+      opacity: 0.8,
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      "& div": {
+        display: "flex",
+        flexDirection: "column",
+        fontSize: "0.8em"
+      },
+
+      "& Button": {
+        color: "white",
+        background: "#80808073",
+        marginTop: "10px"
+      }
+    },
+    notes: {
+      display: "flex",
+      flexWrap: "wrap"
+    },
     imageContainer: {
       background: "#9e9e9e30",
       border: "8px solid transparent",
       backgroundClip: "padding-box",
-      borderRadius: "15px",
-      padding: "15px",
-      height: "172px",
+      borderRadius: "10px",
+      padding: "10px",
+      height: "129px",
       display: "flex",
       flexDirection: "column",
       boxSizing: "border-box",
       "& img": {
-        height: "100px"
+        height: "60px"
       },
       "& span": {
         fontSize: "0.8em",
         color: "#202124",
-        fontWeight: "600",
+        fontWeight: "500",
         lineHeight: "30px"
       }
     },
@@ -45,6 +70,7 @@ const useStyles = makeStyles(theme =>
       position: "absolute",
       top: "3px",
       right: "6px",
+      fontSize: "1rem",
       color: theme.palette.primary.main
     },
     fab: {
@@ -55,23 +81,30 @@ const useStyles = makeStyles(theme =>
       color: theme.palette.common.white,
       zIndex: "100",
       fontWeight: "600",
-      fontSize: "0.9m",
+      fontSize: "0.7em",
       "&:hover": {
         backgroundColor: theme.palette.primary.main
       }
     },
     shareIcon: {
       marginRight: "10px",
-      fontSize: "1.2rem"
+      fontSize: "1.0rem"
     }
   })
 );
 
 function Notes() {
   const classes = useStyles();
+  const notes = useSelector(state => state.notes);
   const [values, setValues] = useState([]);
   const [open, setOpen] = useState(false);
+  const [showHint, setHint] = useState(localStorage.getItem("hint") !== 'false');
 
+  /**
+   * 
+   * @param {noteId} value 
+   * select and unselect notes .
+   */
   const _setValue = value => {
     let index = values.findIndex(v => v === value);
     if (index !== -1) {
@@ -81,7 +114,10 @@ function Notes() {
     setValues([...values, value]);
   };
 
-  const handleClick = () => {
+  /**
+   * just to simulate that notes being shared with students and open snackbar for ui interaction
+   */
+  const handleShare = () => {
     setValues([]);
     setOpen(true);
   };
@@ -90,26 +126,41 @@ function Notes() {
     setOpen(false);
   };
 
+  /**
+   * save settings for hint in local storage .
+   */
+  const handleHintClick = () => {
+    setHint(false);
+    localStorage.setItem("hint", false);
+  };
+
   return (
     <div className={classes.container}>
-      <ButtonBase className={classes.imageContainer} onClick={() => _setValue(1)}>
-        <img src={excel} alt="" />
-        <span>Previous assign. answers</span>
-        {values.includes(1) ? <CheckIcon className={classes.checkIcon}></CheckIcon> : null}
-      </ButtonBase>
-      <ButtonBase className={classes.imageContainer} onClick={() => _setValue(2)}>
-        <img src={pdf} alt="" />
-        <span>Assignment</span>
-        {values.includes(2) ? <CheckIcon className={classes.checkIcon}></CheckIcon> : null}
-      </ButtonBase>
-      <ButtonBase className={classes.imageContainer} onClick={() => _setValue(3)}>
-        <img src={ppt} alt="" />
-        {values.includes(3) ? <CheckIcon className={classes.checkIcon}></CheckIcon> : null}
-        <span>Today's ppt</span>
-      </ButtonBase>
+      {showHint ? (
+        <div className={classes.canvas}>
+          <div>
+            <span>Tab on item to select</span>
+            <Button onClick={handleHintClick}>Got it</Button>
+          </div>
+        </div>
+      ) : null}
+
+      {
+        <div className={classes.notes}>
+          <Fragment>
+            {notes.map(note => (
+              <ButtonBase key={note.id} className={classes.imageContainer} onClick={() => _setValue(note.id)}>
+                <img src={note.icon} alt="" />
+                <span>{note.title}</span>
+                {values.includes(note.id) ? <CheckIcon className={classes.checkIcon}></CheckIcon> : null}
+              </ButtonBase>
+            ))}
+          </Fragment>
+        </div>
+      }
       <div>
         {values.length > 0 ? (
-          <Fab variant="extended" className={classes.fab} onClick={handleClick}>
+          <Fab variant="extended" className={classes.fab} onClick={handleShare}>
             <ShareIcon className={classes.shareIcon} />
             Add To class
           </Fab>

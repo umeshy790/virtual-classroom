@@ -4,8 +4,6 @@ import Avatar from "@material-ui/core/Avatar";
 import Dialog from "@material-ui/core/Dialog";
 import { Card, CardHeader, IconButton, CardContent } from "@material-ui/core";
 import ScreenShareIcon from "@material-ui/icons/ScreenShare";
-import CheckCircleOutlineIcon from "@material-ui/icons/CheckCircleOutline";
-import GpsFixedIcon from "@material-ui/icons/GpsFixed";
 import ClearIcon from "@material-ui/icons/Clear";
 
 const useStyles = makeStyles({
@@ -18,40 +16,37 @@ const useStyles = makeStyles({
   avatar: {
     backgroundColor: "#0277bd"
   },
-  questionIcon: {
-    fontSize: "2.2rem",
-    color: "#ffa500f0"
-  },
-  performanceIcon: {
-    fontSize: "2.4rem",
-    color: "#008000c9"
-  },
   cardContent: {
     display: "flex",
-    background: "#21bbf317"
+    background: "#9e9e9e30",
+    paddingBottom: "16px !important"
   },
   section: {
     display: "flex",
-    "&:last-child": {
-      marginLeft: "auto"
-    },
+    flex: "1 0 33.3%",
+    overflow: "hidden",
+    justifyContent: "space-between",
     "& div": {
       flex: 1,
-      marginLeft: "20px",
       display: "flex",
       flexDirection: "column",
-      justifyContent: "space-between"
+      justifyContent: "center",
+      padding: "5px",
+      overflow: "hidden"
     },
     "& span": {
       color: "rgba(0, 0, 0, 0.72)",
-      fontSize: "0.875rem",
+      fontSize: "0.8rem",
       fontWeight: 400,
       lineHeight: 1.43,
-      letterSpacing: "0.01071em"
+      letterSpacing: "0.01071em",
+      overflow: "hidden",
+      whiteSpace: "nowrap",
+      textOverflow: "ellipsis"
     },
 
     "& span:last-child": {
-      fontSize: "0.875rem"
+      fontSize: "0.75rem"
     }
   },
   dialogContainer: {
@@ -87,7 +82,6 @@ function ShareScreenDialog(props) {
 function Student(props) {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
-
   const { student } = props;
 
   const onClose = value => {
@@ -108,7 +102,7 @@ function Student(props) {
             </Avatar>
           }
           title={student.name}
-          subheader="September 14, 2016"
+          subheader={"Rank : " + student.rank}
           action={
             <IconButton aria-label="settings" onClick={handleOpenDialog}>
               <ScreenShareIcon />
@@ -118,14 +112,18 @@ function Student(props) {
 
         <CardContent className={classes.cardContent}>
           <section className={classes.section}>
-            <CheckCircleOutlineIcon className={classes.questionIcon} />
+            <div>
+              <span>Classes Attended</span>
+              <span>{student.attendence}</span>
+            </div>
+          </section>
+          <section className={classes.section}>
             <div>
               <span>Quest. attempted</span>
               <span>{student.qa}</span>
             </div>
           </section>
           <section className={classes.section}>
-            <GpsFixedIcon className={classes.performanceIcon} />
             <div>
               <span>Accuracy</span>
               <span>{student.accuracy}</span>
