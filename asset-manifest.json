@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/virtual-classroom/static/css/main.5ecd60fb.chunk.css",
-    "main.js": "/virtual-classroom/static/js/main.0f5478b0.chunk.js",
-    "main.js.map": "/virtual-classroom/static/js/main.0f5478b0.chunk.js.map",
+    "main.js": "/virtual-classroom/static/js/main.295b2863.chunk.js",
+    "main.js.map": "/virtual-classroom/static/js/main.295b2863.chunk.js.map",
     "runtime-main.js": "/virtual-classroom/static/js/runtime-main.7e00e867.js",
     "runtime-main.js.map": "/virtual-classroom/static/js/runtime-main.7e00e867.js.map",
     "static/js/2.3aae07e2.chunk.js": "/virtual-classroom/static/js/2.3aae07e2.chunk.js",
     "static/js/2.3aae07e2.chunk.js.map": "/virtual-classroom/static/js/2.3aae07e2.chunk.js.map",
     "index.html": "/virtual-classroom/index.html",
-    "precache-manifest.59a5c86ed19b034da84f754d4d3de29c.js": "/virtual-classroom/precache-manifest.59a5c86ed19b034da84f754d4d3de29c.js",
+    "precache-manifest.fbdf118a2bca9f8e552f1c600a612864.js": "/virtual-classroom/precache-manifest.fbdf118a2bca9f8e552f1c600a612864.js",
     "service-worker.js": "/virtual-classroom/service-worker.js",
     "static/css/main.5ecd60fb.chunk.css.map": "/virtual-classroom/static/css/main.5ecd60fb.chunk.css.map",
     "static/js/2.3aae07e2.chunk.js.LICENSE": "/virtual-classroom/static/js/2.3aae07e2.chunk.js.LICENSE",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.7e00e867.js",
     "static/js/2.3aae07e2.chunk.js",
     "static/css/main.5ecd60fb.chunk.css",
-    "static/js/main.0f5478b0.chunk.js"
+    "static/js/main.295b2863.chunk.js"
   ]
 }
