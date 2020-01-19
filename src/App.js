@@ -25,10 +25,11 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Provider store={store}>
-        <Router>
+        {/* <Router>
           <Route exact path="/" component={StartClass} />
           <Route exact path="/class" component={Classroom}></Route>
-        </Router>
+        </Router> */}
+        <Classroom />
       </Provider>
     </ThemeProvider>
   );
