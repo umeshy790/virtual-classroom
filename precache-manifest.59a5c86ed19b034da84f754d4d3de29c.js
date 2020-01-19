@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "06b5e0b422255b6b1b0666d4901ef6dc",
+    "revision": "ff574be199cc67b667eeb62f4614531a",
     "url": "/virtual-classroom/index.html"
   },
   {
-    "revision": "861e32bc56a04b0a038e",
+    "revision": "07f18964ed63f19b85e6",
     "url": "/virtual-classroom/static/css/main.5ecd60fb.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/virtual-classroom/static/js/2.3aae07e2.chunk.js.LICENSE"
   },
   {
-    "revision": "861e32bc56a04b0a038e",
-    "url": "/virtual-classroom/static/js/main.ed1a9b49.chunk.js"
+    "revision": "07f18964ed63f19b85e6",
+    "url": "/virtual-classroom/static/js/main.0f5478b0.chunk.js"
   },
   {
     "revision": "0ad3d839f7dd171d7acb",
